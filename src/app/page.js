@@ -43,7 +43,7 @@ export default function Home() {
         <div>
           <p className='text-center text-sm text-gray-500'>Suscribe to get the latest updates</p>
         </div>
-        <div className='flex flex-row justify-center items-center w-1/3 gap-1 mx-auto'>
+        <div className='flex flex-col md:flex-row justify-center items-center w-1/3 gap-1 mx-auto'>
           <Input placeholder='email@gmail.com' onChange={handleSub}/>
           {status ? <Button className="bg-green-600 hover:bg-green-600 font-bold">Suscribed ✔</Button> : <Button onClick={subscribeToNewsletter}>Suscribe</Button>}
         </div>
