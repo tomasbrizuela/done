@@ -14,7 +14,7 @@ export default function Home() {
   }
 
   const subscribeToNewsletter = async () => {
-    let url = 'http://localhost:3030/newSub';
+    let url = 'https://donebackk-948213617426.southamerica-east1.run.app/newSub';
     let data = sub
     let options = {
       'method': 'POST',
