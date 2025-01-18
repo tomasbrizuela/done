@@ -1,5 +1,12 @@
+import Header from "../../components/Header";
+import AuthLayout from '../protected/layout';
+
+
 export default function homePage(){
     return (
+        <>
+        <AuthLayout>
+        <Header/>
         <div className="flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center">
                 <h1>
@@ -10,8 +17,9 @@ export default function homePage(){
                 <p>Complete them before the day ends</p>
             </div>
             <div className="flex flex-col justify-center items-center">
-
             </div>
         </div>
+        </AuthLayout>
+        </>
     );
 }

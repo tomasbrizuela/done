@@ -1,6 +1,6 @@
 'use client'
 import Header from '@/components/Header'
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Input } from "@/components/ui/input"
 import { useState } from 'react';
 
