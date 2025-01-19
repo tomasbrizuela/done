@@ -1,0 +1,4 @@
+hacer sign in con email
+listar tareas cuando se hace el login con google
+    después con los demás logins
+ver layouts para las tareas

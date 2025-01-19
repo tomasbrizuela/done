@@ -1,11 +1,11 @@
 import Header from "../../components/Header";
-import AuthLayout from '../protected/layout';
+import GetUrl from "../../Utils/geturl";
 
 
 export default function homePage(){
     return (
         <>
-        <AuthLayout>
+        <GetUrl>
         <Header/>
         <div className="flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center">
@@ -19,7 +19,7 @@ export default function homePage(){
             <div className="flex flex-col justify-center items-center">
             </div>
         </div>
-        </AuthLayout>
+        </GetUrl>
         </>
     );
 }
