@@ -3,7 +3,9 @@ import { Separator } from "@/components/ui/separator"
 import {Button, buttonVariants} from '../../components/ui/button'
 import Header from '../../components/Header'
 import Link from 'next/link';
-export default function loginForm(){
+import LoginButton from '../../components/LogginButton';
+export default function LoginForm(){
+
     return (
         <>
             <Header />
@@ -21,7 +23,7 @@ export default function loginForm(){
                         <Separator className='w-40'/>
                     </div>
                     <Link href={'https://donebackk-948213617426.southamerica-east1.run.app/auth/provider/google'} className='w-full'>
-                        <Button className='w-full  bg-blue-500 hover:bg-blue-700'>Use Google</Button>
+                        <LoginButton></LoginButton>
                     </Link>
                 </div>
             </div>

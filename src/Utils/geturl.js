@@ -1,7 +1,7 @@
 'use client'
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-import {loginForm} from '../app/login/page'
+import LoginForm from '../app/login/page'
 
 export default function GetUrl({children}){
     const [token, setToken] = useState(null);
@@ -49,7 +49,7 @@ export default function GetUrl({children}){
     }, [token]);
     if(isLoading){
         console.log("Is loading")
-        return <loginForm></loginForm>
+        return <LoginForm isLoading={{isLoading}}></LoginForm>
     }
     return(
         <>
