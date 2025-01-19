@@ -1,18 +1,22 @@
 'use client'
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
+import {loginForm} from '../app/login/page'
 
 export default function GetUrl({children}){
     const [token, setToken] = useState(null);
-    const [userId, setId] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const hash = window.location.hash; // Obtiene todo lo que está después de '#'
         const params = new URLSearchParams(hash.substring(1)); // Elimina el '#' y convierte en parámetros
         const accessToken = params.get("access_token"); // Obtiene el valor de access_token
-        setToken(accessToken)
-        console.log("Access Token:", accessToken);
+        if(accessToken !== token){
+            setToken(accessToken)
+        }
+        console.log("Access Token:", token);
 
         let getTokenValidity = async (token) => {
+            console.log("intentando con la token validity")
             let url = "https://donebackk-948213617426.southamerica-east1.run.app//auth/userInfo";
             let options = {
                 'method': 'POST',
@@ -23,22 +27,33 @@ export default function GetUrl({children}){
             }
             let response = await fetch(url, options);
             let data = await response.json();
-            console.log(data)
-
-        setId(data?.user?.id)
+            return data?.user?.id
         }
 
-        token !== null && getTokenValidity(token);
-        if(!userId){
-            redirect('/login')
+        async function setIdWithToken(token) {
+            if(token !== null){
+                let id = await getTokenValidity(token);
+                if(!id){
+                    console.log("no hay user id")
+                    redirect('/login')
+                } else {
+                    setIsLoading(false)
+                    console.log("SI hay user id")
+    
+                }
+            }
+
         }
+
+        setIdWithToken(token)
     }, [token]);
-
+    if(isLoading){
+        console.log("Is loading")
+        return <loginForm></loginForm>
+    }
     return(
         <>
-        {
-            userId && <>{children}<p>{userId}</p></>
-        }
+            {children}
         </>
     )
 }

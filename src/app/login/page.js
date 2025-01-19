@@ -20,7 +20,7 @@ export default function loginForm(){
                         <p>or</p>
                         <Separator className='w-40'/>
                     </div>
-                    <Link href={'https://donebackk-948213617426.southamerica-east1.run.app//auth/provider/google'} className='w-full'>
+                    <Link href={'https://donebackk-948213617426.southamerica-east1.run.app/auth/provider/google'} className='w-full'>
                         <Button className='w-full  bg-blue-500 hover:bg-blue-700'>Use Google</Button>
                     </Link>
                 </div>
