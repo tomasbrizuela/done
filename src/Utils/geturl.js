@@ -1,7 +1,8 @@
 'use client'
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function GetUrl(){
+export default function GetUrl({children}){
     const [token, setToken] = useState(null);
     const [userId, setId] = useState(null);
     useEffect(() => {
@@ -23,16 +24,21 @@ export default function GetUrl(){
             let response = await fetch(url, options);
             let data = await response.json();
             console.log(data)
-            setId(data?.user?.id);
+
+        setId(data?.user?.id)
         }
 
         token !== null && getTokenValidity(token);
+        if(!userId){
+            redirect('/login')
+        }
     }, [token]);
-    
 
     return(
         <>
-        <p>{userId !== null ? userId : "hola"}</p>
+        {
+            userId && <>{children}<p>{userId}</p></>
+        }
         </>
     )
 }
