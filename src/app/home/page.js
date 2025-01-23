@@ -18,7 +18,6 @@ import {
 export default function homePage() {
     return (
         <>
-            {/* <GetUrl> */}
             <div className="flex flex-col justify-center items-center w-screen gap-4 mt-10">
                 <div className="flex flex-col justify-center items-start w-11/12">
                     <h1 className="text-4xl font-bold">
@@ -65,7 +64,6 @@ export default function homePage() {
                     </Table>
                 </div>
             </div>
-            {/* </GetUrl> */}
         </>
     );
 }
