@@ -35,6 +35,7 @@ export default function Home() {
   }
   return (
     <>
+      <Header />
       <div className="flex flex-col justify-center item-center h-80 gap-4">
         <div>
           <h1 className="text-center text-black font-bold text-4xl">Welcome to the future of productivity</h1>
