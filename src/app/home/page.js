@@ -18,7 +18,7 @@ import {
 export default function homePage() {
     return (
         <>
-            <div className="flex flex-col justify-center items-center w-screen gap-4 mt-10">
+            <div className="flex flex-col justify-center items-center flex-1 gap-4 mt-10">
                 <div className="flex flex-col justify-center items-start w-11/12">
                     <h1 className="text-4xl font-bold">
                         Your tasks

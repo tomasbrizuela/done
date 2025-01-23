@@ -9,7 +9,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
             <div>
                 <SidebarProvider>
                     <AppSidebar />
-                    <main>
+                    <main className="w-screen">
                         <SidebarTrigger />
                         {children}
                     </main>
