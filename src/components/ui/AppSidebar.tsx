@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Calendar, Home, Inbox, LogOut, Search, Settings } from "lucide-react"
 
 import {
     Sidebar,
@@ -38,6 +38,11 @@ const items = [
         url: "/settings",
         icon: Settings,
     },
+    {
+        title: "Logout",
+        url: "/api/logout",
+        icon: LogOut,
+    }
 ]
 
 export default function AppSidebar() {
@@ -45,7 +50,7 @@ export default function AppSidebar() {
         <Sidebar>
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarGroupLabel>done.</SidebarGroupLabel>
+                    <SidebarGroupLabel className="font-bold text-1xl">done.</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => (

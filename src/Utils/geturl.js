@@ -3,14 +3,14 @@ import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoginForm from '../app/login/page'
 
-export default function GetUrl({children}){
+export default function GetUrl({ children }) {
     const [token, setToken] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const hash = window.location.hash; // Obtiene todo lo que está después de '#'
         const params = new URLSearchParams(hash.substring(1)); // Elimina el '#' y convierte en parámetros
         const accessToken = params.get("access_token"); // Obtiene el valor de access_token
-        if(accessToken !== token){
+        if (accessToken !== token) {
             setToken(accessToken)
         }
         console.log("Access Token:", token);
@@ -31,15 +31,15 @@ export default function GetUrl({children}){
         }
 
         async function setIdWithToken(token) {
-            if(token !== null){
+            if (token !== null) {
                 let id = await getTokenValidity(token);
-                if(!id){
+                if (!id) {
                     console.log("no hay user id")
                     redirect('/login')
                 } else {
                     setIsLoading(false)
                     console.log("SI hay user id")
-    
+
                 }
             }
 
@@ -47,11 +47,11 @@ export default function GetUrl({children}){
 
         setIdWithToken(token)
     }, [token]);
-    if(isLoading){
+    if (isLoading) {
         console.log("Is loading")
-        return <LoginForm isLoading={{isLoading}}></LoginForm>
+        return <LoginForm isLoading={{ isLoading }}></LoginForm>
     }
-    return(
+    return (
         <>
             {children}
         </>
