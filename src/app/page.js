@@ -24,15 +24,18 @@ export default function Home() {
       },
       'body': JSON.stringify(data)
     }
-    let response = await fetch(url, options);
-    let responseData = await response.json();
-    console.log(responseData)
-    if (responseData.Message === "Subscribed") {
-      setStatus(true)
-      setTimeout(() => {
-        setStatus(false)
-      }, 1200)
+    if (sub.email !== "") {
+      let response = await fetch(url, options);
+      let responseData = await response.json();
+      console.log(responseData)
+      if (responseData.Message === "Subscribed") {
+        setStatus(true)
+        setTimeout(() => {
+          setStatus(false)
+        }, 1200)
+      }
     }
+
   }
   return (
     <>

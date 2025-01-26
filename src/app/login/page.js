@@ -2,8 +2,8 @@ import { Input } from '../../components/ui/input'
 import { Separator } from "@/components/ui/separator"
 import { Button, buttonVariants } from '../../components/ui/button'
 import Link from 'next/link';
-import LoginButton from '../../components/LogginButton';
 import Header from '../../components/Header'
+import LoginGoogle from '@/components/ui/GoogleLogin';
 
 export default function LoginForm() {
 
@@ -23,9 +23,7 @@ export default function LoginForm() {
                         <p className='text-gray-500'>or</p>
                         <Separator className='w-20' />
                     </div>
-                    <Link href={'https://donebackk-948213617426.southamerica-east1.run.app/auth/provider/google'} className='w-full'>
-                        <LoginButton></LoginButton>
-                    </Link>
+                    <LoginGoogle></LoginGoogle>
                     <Separator className='w-full' />
                     <div className='flex flex-row justify-center item-center gap-1'>
                         <p className='text-gray-600 text-sm'>First time here?</p>
