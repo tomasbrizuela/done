@@ -1,7 +1,7 @@
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import Header from '../../components/Header'
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "../../components/ui/separator"
 import LoginGoogle from '../../components/ui/GoogleLogin'
 
 
@@ -21,7 +21,9 @@ export default function SignUp() {
                     <Button className='w-full'>Create account</Button>
                 </div>
                 <div className='flex flex-row justify-center items-center w-full'>
-                    <p className='text-gray-500'>or</p>
+                    <Separator className="w-28" />
+                    <p className='text-gray-500 ps-2 pe-2'>or</p>
+                    <Separator className="w-28" />
                 </div>
                 <div className='flex flex-col justify-center items-center gap-3 w-full'>
                     <LoginGoogle></LoginGoogle>

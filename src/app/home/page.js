@@ -1,9 +1,8 @@
 import { SquareDashed } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
-import GetUrl from "../../Utils/geturl";
-import AppSidebar from "../../components/ui/AppSidebar"
-import { SidebarTrigger, SidebarProvider } from "../../components/ui/sidebar"
+import PopUp from '../../components/customComponents/PopUp'
+
 import {
     Table,
     TableBody,
@@ -30,7 +29,7 @@ export default function homePage() {
                 <div className="flex flex-col justify-start items-start w-11/12">
                     <div className="flex flex-row justify-center items-center w-6/12 gap-2">
                         <Input placeholder="Create a task" type="text"></Input>
-                        <Button>Add task</Button>
+                        <PopUp></PopUp>
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-start w-11/12">
