@@ -10,7 +10,7 @@ import { User } from "lucide-react"
 export default function SelectUser() {
     return (
         <Select>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="col-span-2">
                 <SelectValue placeholder="List of Users" />
             </SelectTrigger>
             <SelectContent>

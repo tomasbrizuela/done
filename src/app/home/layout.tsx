@@ -5,16 +5,16 @@ import GetUrl from '../../Utils/geturl'
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
     return (
-        <GetUrl>
-            <div>
-                <SidebarProvider>
-                    <AppSidebar />
-                    <main className="w-screen">
-                        <SidebarTrigger />
-                        {children}
-                    </main>
-                </SidebarProvider>
-            </div>
-        </GetUrl>
+        // <GetUrl>
+        <div>
+            <SidebarProvider>
+                <AppSidebar />
+                <main className="w-screen">
+                    <SidebarTrigger />
+                    {children}
+                </main>
+            </SidebarProvider>
+        </div>
+        // </GetUrl>
     )
 }

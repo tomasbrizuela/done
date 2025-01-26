@@ -6,8 +6,9 @@ import {
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
-import { Calendar } from "@/components/ui/calendar"
 import SelectUser from "./SelectUser"
+import { DatePicker } from "./datePicker"
+import { Plus } from "lucide-react"
 
 
 export default function PopUp() {
@@ -42,18 +43,17 @@ export default function PopUp() {
                         </div>
                         <div className="grid grid-cols-3 items-center gap-4">
                             <Label htmlFor="height">Deadline</Label>
-                            <Popover>
-                                <PopoverTrigger asChild>
-                                    <Button variant="outline" className="col-span-2">Click to select date</Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-80">
-                                    <Calendar></Calendar>
-                                </PopoverContent>
-                            </Popover>
+                            <DatePicker />
                         </div>
                         <div className="grid grid-cols-3 items-center gap-4">
                             <Label htmlFor="maxHeight">Assign to</Label>
                             <SelectUser />
+                        </div>
+                        <div className="flex flex-row justify-end items-center">
+                            <Button className="col-span-1">
+                                Create task
+                                <Plus />
+                            </Button>
                         </div>
                     </div>
                 </div>
