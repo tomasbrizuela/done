@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import { Button } from '@/components/ui/button';
 import { Input } from "@/components/ui/input"
 import { useState } from 'react';
+import LoaderButton from '../components/ui/LoaderButton'
 
 export default function Home() {
   const [status, setStatus] = useState(false);
@@ -30,7 +31,7 @@ export default function Home() {
       setStatus(true)
       setTimeout(() => {
         setStatus(false)
-      }, 500)
+      }, 1200)
     }
   }
   return (
@@ -45,7 +46,7 @@ export default function Home() {
         </div>
         <div className='flex flex-col md:flex-row justify-center items-center w-1/3 gap-1 mx-auto'>
           <Input placeholder='email@gmail.com' onChange={handleSub} />
-          {status ? <Button className="bg-green-600 hover:bg-green-600 font-bold">Suscribed</Button> : <Button onClick={subscribeToNewsletter}>Suscribe</Button>}
+          {status ? <LoaderButton>Please Wait</LoaderButton> : <Button onClick={subscribeToNewsletter}>Suscribe</Button>}
         </div>
       </div>
     </>
